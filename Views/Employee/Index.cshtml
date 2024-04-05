@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProjectEmployeeLab3.Models.EmployeeModel>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Department Name</td>
+    </tr>
+    @foreach(var value in @Model)
+    {
+        <tr>
+            <td>@value.Id</td>
+            <td>@value.Name</td>
+            <td>@value.Email</td>
+            <td>@value.Department.DepartmentName</td>
+        </tr>
+    }
+</table>
